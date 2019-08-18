@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <style>
+        .texto{
+            text-align: center;
+            color: beige;
+        }
+        
+        .portada{
+            background-image: url(https://images8.alphacoders.com/632/thumb-350-632051.png);
+            height: 150px;
+        }
+        
+        .color{
+            color: beige;
+        }
+        .portada2{
+            background-image: url(https://images2.alphacoders.com/546/thumb-350-546077.jpg);
+            height: 200px;
+        }
+        .tamañoB{
+            width: 173px;
+        }
+        
+        .centrar{
+            font-family: sans-serif;
+            font-size: 100px;
+        }
+       
+    </style>
+    <h:head>
+        <title>GENERA TU SUELDO</title>
+    </h:head>
+    <h:body>
+        <h:form styleClass="portada2">
+            <div align="right">
+                <br></br>
+                <h1 style="color: blanchedalmond" class="centrar" >BIENVENIDO</h1>
+                
+            </div>
+        </h:form>
+        <h:form styleClass="portada">
+            <h:panelGrid columns="2">    
+            <h:outputLabel styleClass="color" value="NOMBRE:"></h:outputLabel> <h:inputText value="#{view1.nombre}"></h:inputText>
+            <h:outputLabel styleClass="color" value="$ DIA :"></h:outputLabel> <h:inputText value="#{view1.salario}" ></h:inputText>
+            <h:outputLabel styleClass="color" value="DIAS T:"></h:outputLabel> <h:inputText value="#{view1.dias}"></h:inputText>
+            <h:selectManyCheckbox value="#{view1.favNumber4}" styleClass="color">
+                <f:selectItems  value="#{view1.listaIdiomas}" var="idioma"
+                               itemValue="#{idioma.precio}" itemLabel="#{idioma.idioma}"/>
+                </h:selectManyCheckbox>
+            <h:commandButton styleClass="tamañoB" value="CALCULAR" action="#{view1.dirigir()}"></h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
